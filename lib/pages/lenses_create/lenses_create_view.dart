@@ -11,8 +11,8 @@ class LensesCreateView extends GetView<LensesCreateLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.keeling.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.turner.value
+              ? const CircularProgressIndicator(color: Colors.pinkAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class LensesCreateView extends GetView<LensesCreateLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.brnyj();
+              controller.sjwz();
             },
             icon: const Icon(
               Icons.restart_alt,
