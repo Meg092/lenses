@@ -62,9 +62,8 @@ class _LensesFirstPageState extends State<LensesFirstPage>
                 data: ThemeData(
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
-                    useMaterial3: true,
-                    tabBarTheme:
-                        const TabBarTheme(indicatorColor: Colors.transparent)),
+                    useMaterial3: true
+                ),
                 child: TabBar(
                   tabAlignment: TabAlignment.fill,
                   controller: _tabController,
